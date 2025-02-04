@@ -1,0 +1,1 @@
+Als erstes die requirements.txt durchlesen ob das System auch die nötigen requirements erfüllt und danach die docu_ansible.txt angegucken, denn dort steht drin wie man vorgehen sollte und wie man die playbooks laufen lässt.
