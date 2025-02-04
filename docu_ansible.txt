@@ -1,0 +1,30 @@
+# Create inventory file and add the hosts to the /etc/ansible/hosts (INI or YAML file)
+[hosts] #name of the group
+username@hostname
+jamen-linux@192.168.178.62
+
+# If you want to verify a new inventory outside of /etc/ansible/hosts
+ansible-inventory -i inventory.ini --list
+
+# If you then want to run a playbook based on the hosts in that inventory
+ansible-playbook -i inventory.ini install_htop.yaml
+
+
+# Ensure that the public key of the master is in in ~/.ssh/authorized_keys of the host youwant to conncet to.
+
+# Make sure that in the /etc/ssh/sshd_config 
+PubkeyAuthentication yes
+and 
+PasswordAuthentication no
+
+# Ensure ~/.ssh directory exists and has the correct permissions
+sudo chmod 700 ~/.ssh
+
+# Ensure ~/.ssh/known_hosts exists and has the correct permissions
+sudo touch ~/.ssh/known_hosts  # This creates the file if it doesn't exist
+sudo chmod 644 ~/.ssh/known_hosts
+
+# Ensure you own the ~/.ssh directory and known_hosts file
+sudo chown $(whoami):$(whoami) ~/.ssh
+sudo chown $(whoami):$(whoami) ~/.ssh/known_hosts
+

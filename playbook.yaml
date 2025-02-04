@@ -1,0 +1,11 @@
+---
+- name: Purge htop from Debian-based systems
+  hosts: all
+  become: true
+  tasks:
+    - name: Purge htop
+      ansible.builtin.apt:
+        name: htop
+        state: absent
+        purge: yes  # This ensures that configuration files are also removed
+

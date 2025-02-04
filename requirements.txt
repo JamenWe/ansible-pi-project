@@ -1,0 +1,6 @@
+The requiremnts for the Script to run:
+1. Python has to be installed.
+2. Python library 'netifaces' has to be installed.
+3. Ansible has to be installed.
+4. You need Network access as well as access to the path you want the inventory file to go to.
+5. Adjust the path and the filename to your wishes.
